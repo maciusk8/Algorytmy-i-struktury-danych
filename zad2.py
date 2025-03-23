@@ -1,4 +1,4 @@
-from zad2testy import runtests
+
 #problem roziwac mozna za pomoca algorytmu merge sort w ktorym zliczamy przypadki kiedy bierzemy 
 #element z "lewej" tablicy, poniewaz wtedy zachodzi inwersja, skoro elementy sa posortowane to wiadomo, ze wieksze ktore zostaly w lewej tablicy
 #rownniez posiadaja inwersje ze wszystkimi z prawej co nalezy policzyc
