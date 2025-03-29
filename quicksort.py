@@ -16,3 +16,5 @@ def quicksort(T, s, e):
 
     
     
+quicksort(T, 0 , len(T)-1)
+print(T)
