@@ -1,0 +1,29 @@
+Szukaie mostow w grafach nieskierowanych
+1.wykonujemy DFS dla kazdego wierzcholka v, czas odwiedzeniea d(v)
+oraz funkcje low low(v)= min {d(v), d(u), low(u)} - dziedziczenie low po dzieciach
+u jest dzieckiem v w dfs 
+
+Punkty artykulacji
+V jest punktem artykulacji jesli jego usuniecie zwieksza liczbe spojnych skladowych
+Wierzcholek jest punktem arttykulacji jesli
+    a) jest korzeniem dfs i ma co najmniej 2 dzieciach
+    b) nie jest korzeniem i ma syna s takiego ze, low(s) >= d(v)
+
+Najkrotsza sciezka w grafach wazonych
+1-1 (z punktu widzenia algorytmiki klasycznej, trudne do wykorzystania)
+1-wszyscy (zazwyczaj) (BFS DIJSKTRA BELLMAN FORD)
+wszyscy-wszyscy (Floyd Warshall)
+1.BFS (jesli jest waga dodajemy tyle wierzcholkow ile wynosi waga) spoko dla malych wag 
+W momencie kiedy bedac w a widzimy wierzcholek b w odleglosci 4 to ja wrzucam do kolejki B,3 ale jeszcze 3 wierzcholki
+czyli zdjedmuje z kolejki i robie B,2 potem B,1 i gdy B,0 to wchodze w wierzcholek 
+Czas proporcjonalny do sumy wag krawedzi. Gdy mamy sztuczne krawedzie to powinnismy przejsc do momentu pierwszego nie sztucznego wierzcholka 
+2. Dijsktra to de facto nasz bfs ale skacze bezposrednio do prawdziwych wierzcholkow i wagi nie musza byc naturalne ale musza byc nieujemne
+a) wszystkie wierzcholki otrzymuja wartosc v.d = oo i sa ustawiwane w kolejce piorytetowej
+typu minimum (krok sztuczny nie wykonujemy go w praktyce)
+b)s.d = 0 //uaktualniamy kolejke
+c)wyciagamy z kolejki Q wierzcholek u o minimelnej wartosci u.d wykonujemy dla kazdej krawedzi u do v relaksacje
+def relax(u,v):
+    if u.d +w(u,v) <v.d:
+        v.d = u.d + w(u,v)  //wrzucamy druga kopie wierzcholka w praktyce wiec trzeba visited miec
+        v.parent = u
+wykonujemy rok c do konca kolejki

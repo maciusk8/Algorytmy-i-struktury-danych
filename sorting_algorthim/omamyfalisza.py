@@ -12,4 +12,10 @@ class Node:
             self.next = None
             self.val = val
 
+
+# algorytmy grafowe
+# BFS - breadth first search
+# DFS - depth first search
+
+
         
