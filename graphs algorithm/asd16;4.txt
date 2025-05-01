@@ -1,6 +1,6 @@
 Szukaie mostow w grafach nieskierowanych
 1.wykonujemy DFS dla kazdego wierzcholka v, czas odwiedzeniea d(v)
-oraz funkcje low low(v)= min {d(v), d(u), low(u)} - dziedziczenie low po dzieciach
+oraz funkcje low         - dziedziczenie low po dzieciach
 u jest dzieckiem v w dfs 
 
 Punkty artykulacji
@@ -27,3 +27,26 @@ def relax(u,v):
         v.d = u.d + w(u,v)  //wrzucamy druga kopie wierzcholka w praktyce wiec trzeba visited miec
         v.parent = u
 wykonujemy rok c do konca kolejki
+
+Blmain sford 
+1) for v in G.V:
+    v.d = oo
+    for v in G.V:
+        v.p = None
+    s.d =0
+2) for i in range (|V|-1)
+        for (u,v) in E:
+            relax(u,v)
+3 
+algorytm drodza floyda
+MST
+algorytm kruskala
+
+
+1.algorytm dijkstry
+rep macierzowa
+
+2.odtwarzanie najktorszej sciezki na podstawie tablicy parentow
+3.prosze podac algorytm znajdujacy najkrotsza sciezke w dagu
+4.dlugoscia sciezki jest iloczyn jej wag zaproponuj jak najszybszy algorytm znajdujacy najkrotsze sciezki
+5. pordanik turystyczny chcemy sciezke z s do t fdzie minimalna waga jest jak najwiekszaa
