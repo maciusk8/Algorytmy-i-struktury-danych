@@ -26,7 +26,7 @@ def dijkstra(G, s):
             for u, wu in graph[v]:
                 if d[v] + wu < d[u]:
                     d[u] = d[v] + wu
-                q.put((d[u], u))
+                    q.put((d[u], u))
         visited[v] = True
     return d
 
