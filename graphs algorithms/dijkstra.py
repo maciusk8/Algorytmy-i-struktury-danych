@@ -16,18 +16,19 @@ from queue import PriorityQueue
 def dijkstra(G, s):
     n = len(G)
     d = [float('inf')]*n
-    d[s] = 0
     visited = [False]*n
+    d[s] = 0
     q = PriorityQueue()
-    q.put((0,s))
+    q.put((0, s))
     while not q.empty():
-        v = q.get()[1]
-        if not visited[v]:
-            for u, wu in graph[v]:
-                if d[v] + wu < d[u]:
-                    d[u] = d[v] + wu
+        c, v = q.get()
+        for u, w in G[v]:
+            if not visited[u]:
+                if d[u] > d[v] + w:
+                    d[u] = d[v] + w
                     q.put((d[u], u))
         visited[v] = True
     return d
+
 
 print(dijkstra(graph, 0))

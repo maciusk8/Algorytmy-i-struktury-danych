@@ -21,4 +21,4 @@ def bellmanford(G,s):
                 if d[v]>d[u]+wv:
                     d[v]=d[u]+wv
     return d
-print(bellmanford(graph, 1))
+print(bellmanford(graph, 7))

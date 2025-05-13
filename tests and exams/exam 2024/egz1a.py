@@ -1,7 +1,7 @@
-  from egz1atesty import runtests
-  from queue import PriorityQueue
+from egz1atesty import runtests
+from queue import PriorityQueue
 
-  def rowerize(B, n): #funkcja ktora zamienia B na liste ktora w i posiada najlepszy rower w i
+def rowerize(B, n): #funkcja ktora zamienia B na liste ktora w i posiada najlepszy rower w i
     B_new = [()  for i in range(n)]
     id = 1
     for i, p, q in B: 
@@ -14,7 +14,7 @@
           id+=1
     return B_new, id
 
-  def to_adjlist(E):
+def to_adjlist(E):
     max_vertex = 0
     for edge in E:
         max_vertex = max(max_vertex, edge[0], edge[1])
@@ -25,7 +25,7 @@
       graph[edge[1]].append((edge[0], edge[2]))
     return graph, n  
 
-  def armstrong( B, G, s, t):
+def armstrong( B, G, s, t):
     graph, n = to_adjlist(G)
     bicycle, b_cnt = rowerize(B, n)
     dist = [[float('inf')]*(b_cnt+1) for i in range(n)] #id-0 to pieszo
@@ -50,4 +50,4 @@
     return -1
 
   # zmien all_tests na True zeby uruchomic wszystkie testy
-  runtests( armstrong, all_tests = True )
+runtests( armstrong, all_tests = True )

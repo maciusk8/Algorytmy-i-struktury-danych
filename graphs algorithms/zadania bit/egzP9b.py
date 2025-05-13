@@ -15,14 +15,14 @@ def dyrektor(G, R):
 def find_eulerian_cycle_directed(adj):
     stack = []
     cycle = []
-    current_vertex = 0  # Można zacząć od dowolnego wierzchołka
-    stack.append(current_vertex)
+    v = 0  # Można zacząć od dowolnego wierzchołka
+    stack.append(v)
     
     while stack:
-        current_vertex = stack[-1]
-        if adj[current_vertex]:  # Jeśli są jeszcze krawędzie wychodzące
-            next_vertex = adj[current_vertex].pop()  # Usuwamy krawędz
-            stack.append(next_vertex)
+        v = stack[-1]
+        if adj[v]:  # Jeśli są jeszcze krawędzie wychodzące
+            u = adj[v].pop()  # Usuwamy krawędz
+            stack.append(u)
         else:
             cycle.append(stack.pop())
     
